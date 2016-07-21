@@ -18,33 +18,41 @@ class Money: Equatable, Hashable{
         self.currency = currency
     }
     
+    init(euroWithAmount: NSInteger){
+        self.amount =  euroWithAmount
+        self.currency = "EUR"
+    }
+    
+    init(dollarWithAmount: NSInteger){
+        self.amount =  dollarWithAmount
+        self.currency = "USD"
+    }
+    
 //    func multiplier(times: Int){
 //        self.amount = self.amount * times
 //    }
     
-    func times(multiplier: NSInteger) throws ->AnyObject{
+    func times(multiplier: NSInteger) ->Money{
 
-        if (self is Euro){
-            let money =  Euro(withAmount: self.amount * multiplier, currency: self.currency)
-            return money
-        }else if (self is Dollar){
-            let money =  Dollar(withAmount: self.amount * multiplier, currency: self.currency)
-            return money
-        }else{
             let money =  Money(withAmount: self.amount * multiplier, currency: self.currency)
             return money
-        }
         
     }
 
     
-    func euroWithAmount(amount: NSInteger) -> AnyObject{
-        return Euro(withAmount: amount, currency: self.currency)
+    func euroWithAmount(amount: NSInteger) -> Money{
+        return Money(withAmount: amount, currency: "EUR")
         
     }
     
-    func dollarWithAmount(amount: NSInteger) -> AnyObject{
-        return Dollar(withAmount: amount, currency: self.currency)
+    func dollarWithAmount(amount: NSInteger) -> Money{
+        return Money(withAmount: amount, currency: "USD")
+    }
+    
+    func plus(money: Money) -> Money{
+        let total = self.amount + money.amount
+        return Money(withAmount: total, currency: self.currency)
+        
     }
     
     var hashValue: Int {
@@ -69,14 +77,5 @@ func hash() -> NSString{
 }
 
 func ==(lhs: Money, rhs: Money) -> Bool{
-    if (lhs is Euro && rhs is Euro){
-        let alhs = lhs as! Euro
-        let arhs = rhs as! Euro
-        return alhs.amount == arhs.amount
-    }else if(lhs is Dollar && rhs is Dollar){
-        let alhs = lhs as! Dollar
-        let arhs = rhs as! Dollar
-        return alhs.amount == arhs.amount
-    }
-    return lhs.amount == rhs.amount
+    return lhs.currency == rhs.currency && lhs.amount == rhs.amount
 }

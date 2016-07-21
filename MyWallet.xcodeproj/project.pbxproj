@@ -13,12 +13,9 @@
 		130DAD521D3D6BDF00E9629D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 130DAD511D3D6BDF00E9629D /* Assets.xcassets */; };
 		130DAD551D3D6BDF00E9629D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 130DAD531D3D6BDF00E9629D /* LaunchScreen.storyboard */; };
 		130DAD6B1D3D6BE000E9629D /* MyWalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130DAD6A1D3D6BE000E9629D /* MyWalletUITests.swift */; };
-		130DAD791D3D6D1300E9629D /* EuroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130DAD781D3D6D1300E9629D /* EuroTests.swift */; };
-		130DAD7B1D3D6E0700E9629D /* Euro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130DAD7A1D3D6E0700E9629D /* Euro.swift */; };
-		1314FD0C1D3E94CA00C603B5 /* Euro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130DAD7A1D3D6E0700E9629D /* Euro.swift */; };
-		138C658E1D3FDBBF0090E32A /* DollarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C658D1D3FDBBF0090E32A /* DollarTest.swift */; };
-		138C65901D3FDC9B0090E32A /* Dollar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C658F1D3FDC9B0090E32A /* Dollar.swift */; };
-		138C65911D3FDC9B0090E32A /* Dollar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C658F1D3FDC9B0090E32A /* Dollar.swift */; };
+		1332E0FB1D415044009E9EA0 /* BrokerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1332E0FA1D415044009E9EA0 /* BrokerTest.swift */; };
+		1332E0FD1D41519A009E9EA0 /* Broker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1332E0FC1D41519A009E9EA0 /* Broker.swift */; };
+		1332E0FE1D41519C009E9EA0 /* Broker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1332E0FC1D41519A009E9EA0 /* Broker.swift */; };
 		138C65941D3FE0540090E32A /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C65931D3FE0540090E32A /* Money.swift */; };
 		138C65951D3FE0540090E32A /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C65931D3FE0540090E32A /* Money.swift */; };
 		138C65981D3FE3BD0090E32A /* GNUStepAddons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C65971D3FE3BD0090E32A /* GNUStepAddons.swift */; };
@@ -58,10 +55,8 @@
 		130DAD661D3D6BE000E9629D /* MyWalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyWalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		130DAD6A1D3D6BE000E9629D /* MyWalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWalletUITests.swift; sourceTree = "<group>"; };
 		130DAD6C1D3D6BE000E9629D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		130DAD781D3D6D1300E9629D /* EuroTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EuroTests.swift; sourceTree = "<group>"; };
-		130DAD7A1D3D6E0700E9629D /* Euro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Euro.swift; sourceTree = "<group>"; };
-		138C658D1D3FDBBF0090E32A /* DollarTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DollarTest.swift; sourceTree = "<group>"; };
-		138C658F1D3FDC9B0090E32A /* Dollar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dollar.swift; sourceTree = "<group>"; };
+		1332E0FA1D415044009E9EA0 /* BrokerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrokerTest.swift; path = ../MyWallet/BrokerTest.swift; sourceTree = "<group>"; };
+		1332E0FC1D41519A009E9EA0 /* Broker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Broker.swift; sourceTree = "<group>"; };
 		138C65931D3FE0540090E32A /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		138C65971D3FE3BD0090E32A /* GNUStepAddons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GNUStepAddons.swift; sourceTree = "<group>"; };
 		138C65A01D3FE9BC0090E32A /* MoneyTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyTest.swift; sourceTree = "<group>"; };
@@ -132,9 +127,8 @@
 		130DAD5E1D3D6BE000E9629D /* MyWalletTests */ = {
 			isa = PBXGroup;
 			children = (
+				1332E0FA1D415044009E9EA0 /* BrokerTest.swift */,
 				130DAD611D3D6BE000E9629D /* Info.plist */,
-				130DAD781D3D6D1300E9629D /* EuroTests.swift */,
-				138C658D1D3FDBBF0090E32A /* DollarTest.swift */,
 				138C65A01D3FE9BC0090E32A /* MoneyTest.swift */,
 			);
 			path = MyWalletTests;
@@ -160,9 +154,8 @@
 		138C65A61D4001070090E32A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				130DAD7A1D3D6E0700E9629D /* Euro.swift */,
-				138C658F1D3FDC9B0090E32A /* Dollar.swift */,
 				138C65931D3FE0540090E32A /* Money.swift */,
+				1332E0FC1D41519A009E9EA0 /* Broker.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -301,9 +294,8 @@
 				130DAD4D1D3D6BDF00E9629D /* ViewController.swift in Sources */,
 				138C65981D3FE3BD0090E32A /* GNUStepAddons.swift in Sources */,
 				138C65941D3FE0540090E32A /* Money.swift in Sources */,
-				138C65901D3FDC9B0090E32A /* Dollar.swift in Sources */,
 				130DAD4B1D3D6BDF00E9629D /* AppDelegate.swift in Sources */,
-				130DAD7B1D3D6E0700E9629D /* Euro.swift in Sources */,
+				1332E0FD1D41519A009E9EA0 /* Broker.swift in Sources */,
 				138C65A41D3FEAE90090E32A /* Errors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,14 +304,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				130DAD791D3D6D1300E9629D /* EuroTests.swift in Sources */,
+				1332E0FB1D415044009E9EA0 /* BrokerTest.swift in Sources */,
 				138C65991D3FE3BD0090E32A /* GNUStepAddons.swift in Sources */,
 				138C65951D3FE0540090E32A /* Money.swift in Sources */,
 				138C65A21D3FE9BC0090E32A /* MoneyTest.swift in Sources */,
+				1332E0FE1D41519C009E9EA0 /* Broker.swift in Sources */,
 				138C65A51D3FEAE90090E32A /* Errors.swift in Sources */,
-				138C65911D3FDC9B0090E32A /* Dollar.swift in Sources */,
-				1314FD0C1D3E94CA00C603B5 /* Euro.swift in Sources */,
-				138C658E1D3FDBBF0090E32A /* DollarTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
