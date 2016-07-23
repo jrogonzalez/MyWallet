@@ -16,6 +16,9 @@
 		1332E0FB1D415044009E9EA0 /* BrokerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1332E0FA1D415044009E9EA0 /* BrokerTest.swift */; };
 		1332E0FD1D41519A009E9EA0 /* Broker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1332E0FC1D41519A009E9EA0 /* Broker.swift */; };
 		1332E0FE1D41519C009E9EA0 /* Broker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1332E0FC1D41519A009E9EA0 /* Broker.swift */; };
+		1373C14F1D438BAA00A71488 /* WalletTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1373C14E1D438BAA00A71488 /* WalletTexts.swift */; };
+		1373C1521D438DA500A71488 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1373C1511D438DA500A71488 /* Wallet.swift */; };
+		1373C1531D438DA500A71488 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1373C1511D438DA500A71488 /* Wallet.swift */; };
 		138C65941D3FE0540090E32A /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C65931D3FE0540090E32A /* Money.swift */; };
 		138C65951D3FE0540090E32A /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C65931D3FE0540090E32A /* Money.swift */; };
 		138C65981D3FE3BD0090E32A /* GNUStepAddons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C65971D3FE3BD0090E32A /* GNUStepAddons.swift */; };
@@ -57,6 +60,8 @@
 		130DAD6C1D3D6BE000E9629D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1332E0FA1D415044009E9EA0 /* BrokerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrokerTest.swift; path = ../MyWallet/BrokerTest.swift; sourceTree = "<group>"; };
 		1332E0FC1D41519A009E9EA0 /* Broker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Broker.swift; sourceTree = "<group>"; };
+		1373C14E1D438BAA00A71488 /* WalletTexts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletTexts.swift; sourceTree = "<group>"; };
+		1373C1511D438DA500A71488 /* Wallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		138C65931D3FE0540090E32A /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		138C65971D3FE3BD0090E32A /* GNUStepAddons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GNUStepAddons.swift; sourceTree = "<group>"; };
 		138C65A01D3FE9BC0090E32A /* MoneyTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyTest.swift; sourceTree = "<group>"; };
@@ -130,6 +135,7 @@
 				1332E0FA1D415044009E9EA0 /* BrokerTest.swift */,
 				130DAD611D3D6BE000E9629D /* Info.plist */,
 				138C65A01D3FE9BC0090E32A /* MoneyTest.swift */,
+				1373C14E1D438BAA00A71488 /* WalletTexts.swift */,
 			);
 			path = MyWalletTests;
 			sourceTree = "<group>";
@@ -156,6 +162,7 @@
 			children = (
 				138C65931D3FE0540090E32A /* Money.swift */,
 				1332E0FC1D41519A009E9EA0 /* Broker.swift */,
+				1373C1511D438DA500A71488 /* Wallet.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -292,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				130DAD4D1D3D6BDF00E9629D /* ViewController.swift in Sources */,
+				1373C1521D438DA500A71488 /* Wallet.swift in Sources */,
 				138C65981D3FE3BD0090E32A /* GNUStepAddons.swift in Sources */,
 				138C65941D3FE0540090E32A /* Money.swift in Sources */,
 				130DAD4B1D3D6BDF00E9629D /* AppDelegate.swift in Sources */,
@@ -304,10 +312,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1373C1531D438DA500A71488 /* Wallet.swift in Sources */,
 				1332E0FB1D415044009E9EA0 /* BrokerTest.swift in Sources */,
 				138C65991D3FE3BD0090E32A /* GNUStepAddons.swift in Sources */,
 				138C65951D3FE0540090E32A /* Money.swift in Sources */,
 				138C65A21D3FE9BC0090E32A /* MoneyTest.swift in Sources */,
+				1373C14F1D438BAA00A71488 /* WalletTexts.swift in Sources */,
 				1332E0FE1D41519C009E9EA0 /* Broker.swift in Sources */,
 				138C65A51D3FEAE90090E32A /* Errors.swift in Sources */,
 			);

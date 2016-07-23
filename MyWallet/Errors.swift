@@ -10,4 +10,5 @@ import Foundation
 
 enum Errors :   ErrorType{
     case methodShouldBeOverwritten
+    case rateEmpty
 }

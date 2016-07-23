@@ -28,9 +28,9 @@ class Money: Equatable, Hashable{
         self.currency = "USD"
     }
     
-//    func multiplier(times: Int){
-//        self.amount = self.amount * times
-//    }
+    func multiplier(times: Int){
+        self.amount = self.amount * times
+    }
     
     func times(multiplier: NSInteger) ->Money{
 
@@ -39,15 +39,6 @@ class Money: Equatable, Hashable{
         
     }
 
-    
-    func euroWithAmount(amount: NSInteger) -> Money{
-        return Money(withAmount: amount, currency: "EUR")
-        
-    }
-    
-    func dollarWithAmount(amount: NSInteger) -> Money{
-        return Money(withAmount: amount, currency: "USD")
-    }
     
     func plus(money: Money) -> Money{
         let total = self.amount + money.amount
@@ -61,21 +52,36 @@ class Money: Equatable, Hashable{
         }
     }
     
+    func hash() -> NSInteger{
+        
+        return self.amount
+
+    }
+    
+    //MARK: overwritten
+    func description() -> NSString{
+        let nombre = String(self.dynamicType)
+        let aux = String(format: "<\(nombre): %@ %d>", self.currency,  self.amount)
+        return aux
+    }
+    
     
 
 }
 
-//MARK: overwritten
-func description() -> NSString{
-    
-    return NSString(format: "<%@ %ld")
-}
 
-func hash() -> NSString{
-    
-    return NSString(format: "<%@ %ld")
-}
+
 
 func ==(lhs: Money, rhs: Money) -> Bool{
     return lhs.currency == rhs.currency && lhs.amount == rhs.amount
 }
+
+
+protocol MoneyProtocol {
+    
+    init(withAmount: NSInteger, currency: NSString)
+    func times(multiplier: NSInteger) ->AnyObject
+    func plus(money: Money) -> AnyObject
+    
+}
+
