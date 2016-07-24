@@ -43,6 +43,7 @@ class WalletTexts: XCTestCase {
             
         }catch let error as NSError{
             print("error \(error)")
+            XCTAssertEqual(true, false, "EXCEPTION IN testAdditionWithReduction WalletTest")
             
         }
         

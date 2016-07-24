@@ -8,16 +8,23 @@
 
 import Foundation
 
-class Wallet: NSObject, MoneyProtocol{
+class Wallet: Money{
     
     var moneys : [Money] = []
+    private var count : Int
     
-    required init(withAmount: NSInteger, currency: NSString){
+    override init(withAmount: NSInteger, currency: NSString){
         let money = Money(withAmount: withAmount, currency: currency)
         self.moneys.append(money)
+        self.count = 0
+        super.init(withAmount: withAmount, currency: currency)
+    }
+
+    func cont()-> Int{
+        return self.moneys.count
     }
     
-    func times(multiplier: NSInteger) ->AnyObject{
+    override func times(multiplier: NSInteger) ->Money{
         var newMoneys : [Money] = []
         
         for each in self.moneys{
@@ -30,9 +37,27 @@ class Wallet: NSObject, MoneyProtocol{
         
     }
     
-    func plus(money: Money) -> AnyObject{
+    override func plus(money: Money) -> Money{
         self.moneys.append(money)
         return self
+    }
+    
+    
+    override func reduce(toCurrency: String, withBroker: Broker) throws -> Money{
+        
+        //        var result : Wallet = Wallet(withAmount: 10, currency: "EUR")
+        
+        var newAmount = 0.0
+        
+        for each in self.moneys{
+            
+            let auxMoney = try each.reduce(toCurrency, withBroker: withBroker)
+            
+            newAmount += Double(auxMoney.amount)
+        }
+        
+        
+        return Money(withAmount: Int(newAmount), currency: toCurrency)
     }
     
     

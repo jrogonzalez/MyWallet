@@ -65,7 +65,26 @@ class Money: Equatable, Hashable{
         return aux
     }
     
-    
+    func reduce(toCurrency: String, withBroker: Broker) throws -> Money{
+        
+        var result : Money
+        //comprobamos que divisa de origen y de destino son las mismas
+        if self.currency.isEqualToString(toCurrency){
+            return self
+        }
+        
+        guard let rate = withBroker.rates[withBroker.keyFromCurrency(self.currency, toCurrency: toCurrency)] else{
+            throw Errors.rateEmpty
+        }
+        
+        if rate == 0 {
+            throw Errors.rateEmpty
+        }
+        
+        let newAmount = Double(self.amount) * rate
+        result = Money(withAmount: Int(newAmount), currency: toCurrency)
+        return result
+    }    
 
 }
 

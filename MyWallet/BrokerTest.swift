@@ -60,6 +60,7 @@ class BrokerTest: XCTestCase {
 
         }catch let error as NSError{
             print("error \(error)")
+            XCTAssertEqual(true, false, "EXCEPTION IN testReduction BrokerTest")
         }
         
         
