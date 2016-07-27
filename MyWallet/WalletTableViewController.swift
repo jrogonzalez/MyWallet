@@ -85,8 +85,7 @@ class WalletTableViewController: UITableViewController {
         var sum = 0.0
 
         let limiteSection = self.model.sections()
-        print("SECTION: \(indexPath.section) ROW: \(indexPath.row)")
-        
+       
         if (indexPath.section == limiteSection){            
             // Sincronizar moneda -> celda
             
