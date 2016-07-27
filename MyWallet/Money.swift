@@ -13,7 +13,7 @@ class Money: Equatable, Hashable{
     var amount: NSInteger
     var currency: NSString
     
-    init(withAmount: NSInteger, currency: NSString){
+    init(withAmount: NSInteger, currency: String){
         self.amount =  withAmount
         self.currency = currency
     }
@@ -34,7 +34,7 @@ class Money: Equatable, Hashable{
     
     func times(multiplier: NSInteger) ->Money{
 
-            let money =  Money(withAmount: self.amount * multiplier, currency: self.currency)
+            let money =  Money(withAmount: self.amount * multiplier, currency: self.currency as String)
             return money
         
     }
@@ -42,7 +42,7 @@ class Money: Equatable, Hashable{
     
     func plus(money: Money) -> Money{
         let total = self.amount + money.amount
-        return Money(withAmount: total, currency: self.currency)
+        return Money(withAmount: total, currency: self.currency as String)
         
     }
     
@@ -62,6 +62,11 @@ class Money: Equatable, Hashable{
     func description() -> NSString{
         let nombre = String(self.dynamicType)
         let aux = String(format: "<\(nombre): %@ %d>", self.currency,  self.amount)
+        return aux
+    }
+    
+    func descriptionMoney() -> NSString{        
+        let aux = String(format: "%@ %d", self.currency,  self.amount)
         return aux
     }
     

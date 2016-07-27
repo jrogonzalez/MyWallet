@@ -11,9 +11,17 @@ import UIKit
 class WalletTableViewController: UITableViewController {
     
     let model : Wallet
+    var broker : Broker = Broker()
+    
     
     init(withModel model: Wallet?){
         self.model = model!
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    init(withModel model: Wallet?, broker: Broker){
+        self.model = model!
+        self.broker = broker
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -42,23 +50,102 @@ class WalletTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return self.model.sections() + 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.model.cont() + 1
+        let limiteSection = self.model.sections()
+        
+        if (section < limiteSection){
+            return self.model.cont(section) + 1
+        }else{
+            return 1
+        }
+
+        
+        
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+//        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
-        // Configure the cell...
+        // Tipo de celda
+        let cellId = "MoneyCell"
+        
+        // Crear la celda
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellId)
+        
+        if cell == nil{
+            // el opcional esta vacio: hay que crear la celda a pelo
+            cell = UITableViewCell(style: .Subtitle, reuseIdentifier: cellId)
+        }
 
-        return cell
+        
+        var sum = 0.0
+
+        let limiteSection = self.model.sections()
+        print("SECTION: \(indexPath.section) ROW: \(indexPath.row)")
+        
+        if (indexPath.section == limiteSection){            
+            // Sincronizar moneda -> celda
+            
+            do{
+                let total = try self.model.reduce("USD", withBroker: self.broker)
+                cell?.textLabel?.text = "TOTAL WALLET: \(total.amount) \(total.currency)"
+                cell?.backgroundColor = UIColor.greenColor()
+            }catch let error as NSError{
+                print("Error: \(error)")
+            }
+            
+            
+        }else{
+            let limite = self.model.cont(indexPath.section)
+            // Averiguar de que moneda me estan preguntando
+            if (indexPath.row < limite){
+                let theMoney = money(forIndexPath: indexPath)
+                
+                // Sincronizar moneda -> celda
+                cell?.textLabel?.text = theMoney.descriptionMoney() as String
+            }else{
+                
+                sum = self.model.sumatorio(indexPath.section)
+                // Sincronizar moneda -> celda
+                cell?.textLabel?.text = "Subtotal \(self.model.currency(indexPath.section)): \(sum)"
+            }
+            
+        }
+        
+        return cell!
     }
-    */
+    
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        //Cambiamos el color a la celda
+        view.tintColor = UIColor.cyanColor()
+        
+        let header : UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        
+        header.textLabel?.textColor = UIColor.blackColor()
+        header.textLabel?.textAlignment = NSTextAlignment.Left
+        
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let limiteSection = self.model.sections()
+        
+        if (section < limiteSection){
+            return model.currency(section)
+        }
+        
+        return nil
+    }
+    
+    func money(forIndexPath indexPath: NSIndexPath)-> Money{
+        return model.money(indexPath.section, atRow: indexPath.row)
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

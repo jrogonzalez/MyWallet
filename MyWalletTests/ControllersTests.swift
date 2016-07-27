@@ -56,12 +56,12 @@ class ControllersTests: XCTestCase {
         let table = UITableView()
         let sections = self.walletVC!.numberOfSectionsInTableView(table)
         
-        XCTAssertEqual(sections, 1, "Table and Wallet Has the sae number of sections")
+        XCTAssertEqual(sections, 3, "Table and Wallet Has the same number of sections")
     }
     
     func testThatNumberOfCellIsNumberOfMoneyPlusOne(){
         
-        let a = self.wallet.cont() + 1
+        let a = self.wallet.cont(0) + 1
         let b = self.walletVC!.tableView.numberOfRowsInSection(0)
         XCTAssertEqual(a, b, "number of cells is number of rows plus 1 (the total)")
         

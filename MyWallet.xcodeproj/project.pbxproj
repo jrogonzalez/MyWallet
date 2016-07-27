@@ -25,6 +25,9 @@
 		1373451B1D44C42C00D2864D /* WalletTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137345181D44C42C00D2864D /* WalletTableViewController.swift */; };
 		1373451C1D44C42C00D2864D /* WalletTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137345191D44C42C00D2864D /* WalletTableViewController.xib */; };
 		1373451D1D44C42C00D2864D /* WalletTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137345191D44C42C00D2864D /* WalletTableViewController.xib */; };
+		137345201D44CD4700D2864D /* NotificationCenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1373451F1D44CD4700D2864D /* NotificationCenterTest.swift */; };
+		137345221D44CFDC00D2864D /* FakeNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137345211D44CFDC00D2864D /* FakeNotificationCenter.swift */; };
+		137345231D44CFDC00D2864D /* FakeNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137345211D44CFDC00D2864D /* FakeNotificationCenter.swift */; };
 		1373C14F1D438BAA00A71488 /* WalletTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1373C14E1D438BAA00A71488 /* WalletTexts.swift */; };
 		1373C1521D438DA500A71488 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1373C1511D438DA500A71488 /* Wallet.swift */; };
 		1373C1531D438DA500A71488 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1373C1511D438DA500A71488 /* Wallet.swift */; };
@@ -74,6 +77,8 @@
 		137345151D44BBD300D2864D /* ControllersTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllersTests.swift; sourceTree = "<group>"; };
 		137345181D44C42C00D2864D /* WalletTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletTableViewController.swift; sourceTree = "<group>"; };
 		137345191D44C42C00D2864D /* WalletTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalletTableViewController.xib; sourceTree = "<group>"; };
+		1373451F1D44CD4700D2864D /* NotificationCenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCenterTest.swift; sourceTree = "<group>"; };
+		137345211D44CFDC00D2864D /* FakeNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeNotificationCenter.swift; sourceTree = "<group>"; };
 		1373C14E1D438BAA00A71488 /* WalletTexts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletTexts.swift; sourceTree = "<group>"; };
 		1373C1511D438DA500A71488 /* Wallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		138C65931D3FE0540090E32A /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
@@ -147,6 +152,7 @@
 		130DAD5E1D3D6BE000E9629D /* MyWalletTests */ = {
 			isa = PBXGroup;
 			children = (
+				1373451E1D44CD3300D2864D /* Singletons */,
 				137345141D44BB8200D2864D /* Models */,
 				137345131D44BB7C00D2864D /* Controllers */,
 				130DAD611D3D6BE000E9629D /* Info.plist */,
@@ -166,7 +172,7 @@
 		1373450C1D44BB0A00D2864D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				137345171D44C41500D2864D /* New Group */,
+				137345171D44C41500D2864D /* Singletons */,
 				1373450D1D44BB6200D2864D /* SimpleViewController.swift */,
 				1373450E1D44BB6200D2864D /* SimpleViewController.xib */,
 				137345181D44C42C00D2864D /* WalletTableViewController.swift */,
@@ -193,11 +199,20 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		137345171D44C41500D2864D /* New Group */ = {
+		137345171D44C41500D2864D /* Singletons */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "New Group";
+			name = Singletons;
+			sourceTree = "<group>";
+		};
+		1373451E1D44CD3300D2864D /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				1373451F1D44CD4700D2864D /* NotificationCenterTest.swift */,
+				137345211D44CFDC00D2864D /* FakeNotificationCenter.swift */,
+			);
+			name = Singletons;
 			sourceTree = "<group>";
 		};
 		138C65921D3FE0490090E32A /* Category */ = {
@@ -359,6 +374,7 @@
 				138C65941D3FE0540090E32A /* Money.swift in Sources */,
 				130DAD4B1D3D6BDF00E9629D /* AppDelegate.swift in Sources */,
 				1332E0FD1D41519A009E9EA0 /* Broker.swift in Sources */,
+				137345221D44CFDC00D2864D /* FakeNotificationCenter.swift in Sources */,
 				1373450F1D44BB6300D2864D /* SimpleViewController.swift in Sources */,
 				138C65A41D3FEAE90090E32A /* Errors.swift in Sources */,
 				1373451A1D44C42C00D2864D /* WalletTableViewController.swift in Sources */,
@@ -376,6 +392,8 @@
 				1373451B1D44C42C00D2864D /* WalletTableViewController.swift in Sources */,
 				138C65951D3FE0540090E32A /* Money.swift in Sources */,
 				138C65A21D3FE9BC0090E32A /* MoneyTest.swift in Sources */,
+				137345231D44CFDC00D2864D /* FakeNotificationCenter.swift in Sources */,
+				137345201D44CD4700D2864D /* NotificationCenterTest.swift in Sources */,
 				137345101D44BB6300D2864D /* SimpleViewController.swift in Sources */,
 				1373C14F1D438BAA00A71488 /* WalletTexts.swift in Sources */,
 				1332E0FE1D41519C009E9EA0 /* Broker.swift in Sources */,
